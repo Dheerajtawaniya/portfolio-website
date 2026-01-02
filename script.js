@@ -59,24 +59,3 @@ ScrollReveal({
     loop: true
  });
 
- // ================= EmailJS Contact Form =================
-
-(function(){
-  emailjs.init("Lph5cNFU20e5sHNhr"); // Public Key
-})();
-
-document.getElementById("contact-form").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  emailjs.sendForm(
-    "service_dehkgj",
-    "template_3g33bjc",
-    this
-  ).then(function(){
-    alert("Message Sent Successfully ✅");
-    document.getElementById("contact-form").reset();
-  }, function(error){
-    alert("Failed to send message ❌");
-    console.log(error);
-  });
-});
